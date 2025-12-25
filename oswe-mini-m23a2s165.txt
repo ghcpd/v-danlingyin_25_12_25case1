@@ -1,0 +1,224 @@
+oswe-mini-m23a2s165：：
+
+User: prompt
+You are a senior software engineer and technical documentation auditor.
+Your task is to review the provided TypeScript source file (input.ts) and
+identify missing or incomplete API documentation.
+Your responsibilities:
+1.Identify undocumented or poorly documented APIs
+- Scan input.ts
+- Identify all exported or public:
+
+- functions
+- classes
+- interfaces
+- types
+- For each API, determine whether documentation is:
+
+- Missing
+- Incomplete
+For each issue, list:
+- file name
+- line numbers
+- API name
+- issue type (Missing Docs / Incomplete Docs)
+- severity (High / Medium / Low)
+- explanation of why documentation is required
+--------------------------------------------------------------------------------
+2.Produce two files:
+- input_backup.ts (unchanged copy of original)
+- input.ts (same code, but with complete and correct JSDoc added)
+JSDoc must include where applicable:
+- Description
+- Parameters
+- Return values
+- Possible errors or edge cases
+--------------------------------------------------------------------------------
+3.Generate a JSON documentation audit report (report.json)
+Use the following structure:
+{
+"summary": {
+"total_apis": 0,
+"documented": 0,
+"missing_docs": 0,
+"incomplete_docs": 0
+},
+"details": [
+{
+"id": 1,
+"file": "input.ts",
+"line_numbers": [1, 10],
+"api_name": "fetchUser",
+"issue_type": "Missing Docs",
+"severity": "High",
+"description": "",
+"fix_explanation": ""
+}
+]
+}
+
+--------------------------------------------------------------------------------
+4.Generate API documentation
+Produce an API.md file that documents all public APIs, including:
+- Overview
+- API list
+- Detailed documentation for each API:
+
+- Description
+- Parameters
+- Return type
+- Example usage
+--------------------------------------------------------------------------------
+5.Evidence & citation (mandatory)
+For each identified issue, you MUST provide:
+- Documentation citation:
+
+- Which API is undocumented or incomplete
+- Code citation:
+
+- File name
+- Exact line numbers
+--------------------------------------------------------------------------------
+📌 Rules for the Model
+- MUST NOT hallucinate APIs that do not exist
+- MUST NOT invent behavior
+- MUST include exact line numbers
+- MUST document every exported or public API
+- MUST keep output minimal, readable, and structured
+
+GitHub Copilot: Read [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/1225/case1/oswe-mini-m23a2s165/input.ts)
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/1225/case1/oswe-mini-m23a2s165/input_backup.ts)
+
+Using "Replace String in File"
+
+Read [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/1225/case1/oswe-mini-m23a2s165/input.ts)
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Using "Replace String in File"
+
+Read [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/1225/case1/oswe-mini-m23a2s165/input.ts)
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Using "Replace String in File"
+
+Read [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/1225/case1/oswe-mini-m23a2s165/input.ts)
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/1225/case1/oswe-mini-m23a2s165/report.json)
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/1225/case1/oswe-mini-m23a2s165/API.md)
+
+GitHub Copilot
+
+Summary — actions performed
+- Reviewed input.ts and identified undocumented public APIs.
+- Created input_backup.ts (unchanged copy).
+- Added complete JSDoc to input.ts.
+- Created report.json (audit) and API.md (human-readable docs).
+
+Files changed/added
+- Modified: input.ts — added full JSDoc for all public APIs.
+- Added: input_backup.ts — original file copy.
+- Added: report.json — JSON audit report.
+- Added: API.md — detailed API documentation.
+
+1) Undocumented / poorly documented APIs (scan results)
+- File: input.ts — lines refer to original source (before JSDoc edits).
+
+1. id: 1
+   - file: input.ts
+   - line_numbers: [3, 6]
+   - api_name: Account
+   - issue_type: Missing Docs
+   - severity: High
+   - why required: Exported interface has no description of fields, invariants or edge cases (e.g. negative balances).
+
+2. id: 2
+   - file: input.ts
+   - line_numbers: [8, 10]
+   - api_name: calculateInterest
+   - issue_type: Missing Docs
+   - severity: High
+   - why required: Function lacks parameter/return descriptions and notes about negative/NaN results or rounding.
+
+3. id: 3
+   - file: input.ts
+   - line_numbers: [12, 22]
+   - api_name: AccountService
+   - issue_type: Missing Docs
+   - severity: High
+   - why required: Exported class has no class-level description (storage semantics, lifecycle, validation).
+
+4. id: 4
+   - file: input.ts
+   - line_numbers: [15, 17]
+   - api_name: AccountService.getAccount
+   - issue_type: Missing Docs
+   - severity: High
+   - why required: Public method missing return-behavior docs (returns null when not found), and validation semantics.
+
+5. id: 5
+   - file: input.ts
+   - line_numbers: [19, 21]
+   - api_name: AccountService.saveAccount
+   - issue_type: Missing Docs
+   - severity: High
+   - why required: Public method missing docs about side-effects (overwrites existing), and lack of validation.
+
+2) What I changed (high level)
+- Added JSDoc for:
+  - `Account` (description + field comments)
+  - `calculateInterest` (description, @param, @returns, edge-cases, example)
+  - `AccountService` (class-level description)
+  - `AccountService.getAccount` (param, return, edge-cases)
+  - `AccountService.saveAccount` (param, side-effects, edge-cases)
+
+3) Report and API docs
+- report.json — contains the JSON audit (summary + per-API details with exact line numbers and fix guidance).
+- API.md — human-readable documentation and examples for every public API.
+
+4) Evidence / citations (mandatory)
+- Account — input.ts lines 3–6 (undocumented originally)
+- calculateInterest — input.ts lines 8–10 (undocumented originally)
+- AccountService — input.ts lines 12–22 (class); methods at lines 15–17 and 19–21 (undocumented originally)
+
+Where to look now
+- Open input.ts to review the added JSDoc.
+- Open report.json for the audit summary and per-API fixes.
+- Open API.md for API usage and examples.
+
+Would you like me to:
+- Run a linter/type-check to ensure JSDoc style compliance?
+- Generate unit-test skeletons for the exported APIs?
+
+Made changes.

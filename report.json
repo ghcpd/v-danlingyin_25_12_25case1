@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total_apis": 5,
+    "documented": 0,
+    "missing_docs": 5,
+    "incomplete_docs": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "file": "input.ts",
+      "line_numbers": [3, 6],
+      "api_name": "Account",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Exported interface `Account` has no JSDoc comment describing fields, invariants, or expected values.",
+      "fix_explanation": "Add JSDoc for the interface and document `id` and `balance` meaning and edge cases (e.g. negative balances)."
+    },
+    {
+      "id": 2,
+      "file": "input.ts",
+      "line_numbers": [8, 10],
+      "api_name": "calculateInterest",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Exported function `calculateInterest` lacks documentation about parameters, return value, and edge cases (negative values, NaN).",
+      "fix_explanation": "Add JSDoc including description, @param tags for `balance` and `rate`, @returns and notes about edge cases and behavior (no rounding, possible negative/NaN results)."
+    },
+    {
+      "id": 3,
+      "file": "input.ts",
+      "line_numbers": [12, 22],
+      "api_name": "AccountService",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Exported class `AccountService` has no class-level documentation describing purpose, storage semantics, or lifecycle.",
+      "fix_explanation": "Add class-level JSDoc explaining that this is an in-memory repository, persistence characteristics, and that methods perform no validation."
+    },
+    {
+      "id": 4,
+      "file": "input.ts",
+      "line_numbers": [15, 17],
+      "api_name": "AccountService.getAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method `getAccount` is undocumented; callers don't know returned null behavior or validation semantics.",
+      "fix_explanation": "Add JSDoc describing parameter, return value (`Account | null`), and edge cases (returns null if not found)."
+    },
+    {
+      "id": 5,
+      "file": "input.ts",
+      "line_numbers": [19, 21],
+      "api_name": "AccountService.saveAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method `saveAccount` is undocumented; callers don't know whether it overwrites existing accounts or performs validation.",
+      "fix_explanation": "Add JSDoc describing parameter, side effects (upsert/overwrite), and lack of validation."
+    }
+  ]
+}
