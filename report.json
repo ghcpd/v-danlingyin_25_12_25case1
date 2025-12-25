@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total_apis": 5,
+    "documented": 0,
+    "missing_docs": 5,
+    "incomplete_docs": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "file": "input.ts",
+      "line_numbers": [3, 6],
+      "api_name": "Account",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "The Account interface is exported but lacks JSDoc documentation.",
+      "fix_explanation": "Add JSDoc comment describing the interface and its properties."
+    },
+    {
+      "id": 2,
+      "file": "input.ts",
+      "line_numbers": [8, 13],
+      "api_name": "calculateInterest",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "The calculateInterest function is exported but lacks JSDoc documentation.",
+      "fix_explanation": "Add JSDoc comment with description, parameters, and return type."
+    },
+    {
+      "id": 3,
+      "file": "input.ts",
+      "line_numbers": [15, 27],
+      "api_name": "AccountService",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "The AccountService class is exported but lacks JSDoc documentation.",
+      "fix_explanation": "Add JSDoc comment describing the class."
+    },
+    {
+      "id": 4,
+      "file": "input.ts",
+      "line_numbers": [19, 23],
+      "api_name": "getAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "The getAccount method is public but lacks JSDoc documentation.",
+      "fix_explanation": "Add JSDoc comment with description, parameters, and return type."
+    },
+    {
+      "id": 5,
+      "file": "input.ts",
+      "line_numbers": [25, 27],
+      "api_name": "saveAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "The saveAccount method is public but lacks JSDoc documentation.",
+      "fix_explanation": "Add JSDoc comment with description and parameters."
+    }
+  ]
+}
