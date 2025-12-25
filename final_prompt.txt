@@ -1,0 +1,85 @@
+prompt
+You are a senior software engineer and technical documentation auditor.
+Your task is to review the provided TypeScript source file (input.ts) and
+identify missing or incomplete API documentation.
+Your responsibilities:
+1.Identify undocumented or poorly documented APIs
+- Scan input.ts
+- Identify all exported or public:
+
+- functions
+- classes
+- interfaces
+- types
+- For each API, determine whether documentation is:
+
+- Missing
+- Incomplete
+For each issue, list:
+- file name
+- line numbers
+- API name
+- issue type (Missing Docs / Incomplete Docs)
+- severity (High / Medium / Low)
+- explanation of why documentation is required
+--------------------------------------------------------------------------------
+2.Produce two files:
+- input_backup.ts (unchanged copy of original)
+- input.ts (same code, but with complete and correct JSDoc added)
+JSDoc must include where applicable:
+- Description
+- Parameters
+- Return values
+- Possible errors or edge cases
+--------------------------------------------------------------------------------
+3.Generate a JSON documentation audit report (report.json)
+Use the following structure:
+{
+"summary": {
+"total_apis": 0,
+"documented": 0,
+"missing_docs": 0,
+"incomplete_docs": 0
+},
+"details": [
+{
+"id": 1,
+"file": "input.ts",
+"line_numbers": [1, 10],
+"api_name": "fetchUser",
+"issue_type": "Missing Docs",
+"severity": "High",
+"description": "",
+"fix_explanation": ""
+}
+]
+}
+
+--------------------------------------------------------------------------------
+4.Generate API documentation
+Produce an API.md file that documents all public APIs, including:
+- Overview
+- API list
+- Detailed documentation for each API:
+
+- Description
+- Parameters
+- Return type
+- Example usage
+--------------------------------------------------------------------------------
+5.Evidence & citation (mandatory)
+For each identified issue, you MUST provide:
+- Documentation citation:
+
+- Which API is undocumented or incomplete
+- Code citation:
+
+- File name
+- Exact line numbers
+--------------------------------------------------------------------------------
+📌 Rules for the Model
+- MUST NOT hallucinate APIs that do not exist
+- MUST NOT invent behavior
+- MUST include exact line numbers
+- MUST document every exported or public API
+- MUST keep output minimal, readable, and structured
