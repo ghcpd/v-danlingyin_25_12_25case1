@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total_apis": 5,
+    "documented": 0,
+    "missing_docs": 5,
+    "incomplete_docs": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "file": "input.ts",
+      "line_numbers": [3, 6],
+      "api_name": "Account",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Interface Account is exported but has no JSDoc documentation",
+      "fix_explanation": "Added JSDoc with interface description and property documentation for 'id' and 'balance' fields. Documentation explains the purpose of each property."
+    },
+    {
+      "id": 2,
+      "file": "input.ts",
+      "line_numbers": [8, 10],
+      "api_name": "calculateInterest",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Exported function calculateInterest lacks any documentation. Parameters, return type, and usage are undocumented.",
+      "fix_explanation": "Added comprehensive JSDoc including function description, parameter documentation (@param), return value documentation (@returns), and a practical usage example."
+    },
+    {
+      "id": 3,
+      "file": "input.ts",
+      "line_numbers": [12, 20],
+      "api_name": "AccountService",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Exported class AccountService lacks documentation. Class purpose and internal state are undocumented.",
+      "fix_explanation": "Added JSDoc describing the class purpose, its responsibility in managing accounts, and the nature of public methods available."
+    },
+    {
+      "id": 4,
+      "file": "input.ts",
+      "line_numbers": [15, 17],
+      "api_name": "AccountService.getAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method getAccount is undocumented. Parameter semantics, return behavior for missing accounts, and usage patterns are unclear.",
+      "fix_explanation": "Added JSDoc documenting the parameter (id), return type (Account | null), behavior on missing account, and a practical usage example showing null-safety check."
+    },
+    {
+      "id": 5,
+      "file": "input.ts",
+      "line_numbers": [19, 21],
+      "api_name": "AccountService.saveAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method saveAccount lacks documentation. Parameter requirements and behavior regarding duplicate ids are undocumented.",
+      "fix_explanation": "Added JSDoc documenting the account parameter, void return type, and clarifying that calling saveAccount with an existing id will overwrite the previous account. Included usage example."
+    }
+  ]
+}
