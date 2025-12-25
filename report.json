@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total_apis": 5,
+    "documented": 0,
+    "missing_docs": 5,
+    "incomplete_docs": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "file": "input.ts",
+      "line_numbers": [3, 6],
+      "api_name": "Account",
+      "issue_type": "Missing Docs",
+      "severity": "Medium",
+      "description": "Public interface that defines the shape of account data but has no JSDoc describing properties, units or constraints.",
+      "fix_explanation": "Add JSDoc describing `id` and `balance`, example usage, and note about units/validation."
+    },
+    {
+      "id": 2,
+      "file": "input.ts",
+      "line_numbers": [8, 10],
+      "api_name": "calculateInterest",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public function performing a numeric calculation (financially-sensitive). No documentation on parameter semantics, rate units, rounding, or edge-cases.",
+      "fix_explanation": "Add JSDoc: description, param descriptions, return description, examples and explicit notes about rounding and edge-cases."
+    },
+    {
+      "id": 3,
+      "file": "input.ts",
+      "line_numbers": [12, 22],
+      "api_name": "AccountService",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Exported class (public API surface) with no documentation about lifecycle, storage semantics (in-memory), or thread-safety/validation.",
+      "fix_explanation": "Document class purpose, storage semantics (in-memory), and provide examples and remarks about persistence and validation."
+    },
+    {
+      "id": 4,
+      "file": "input.ts",
+      "line_numbers": [15, 17],
+      "api_name": "AccountService.getAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method: missing contract details (returning null vs throwing, lookup complexity, behavior when id is missing).",
+      "fix_explanation": "Add JSDoc specifying return type semantics (returns `Account | null`), no-throw guarantee, and example usage."
+    },
+    {
+      "id": 5,
+      "file": "input.ts",
+      "line_numbers": [19, 21],
+      "api_name": "AccountService.saveAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method: missing contract (overwrites existing accounts, no validation performed).",
+      "fix_explanation": "Add JSDoc describing overwrite behavior, lack of validation, and example usage."
+    }
+  ]
+}
