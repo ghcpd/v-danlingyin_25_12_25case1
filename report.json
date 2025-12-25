@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total_apis": 5,
+    "documented": 0,
+    "missing_docs": 5,
+    "incomplete_docs": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "file": "input.ts",
+      "line_numbers": [3, 6],
+      "api_name": "Account",
+      "issue_type": "Missing Docs",
+      "severity": "Medium",
+      "description": "The exported interface `Account` lacks a description and property documentation; consumers need to know the purpose and expected invariants of its fields.",
+      "fix_explanation": "Add JSDoc describing the interface and individual property descriptions (id, balance)."
+    },
+    {
+      "id": 2,
+      "file": "input.ts",
+      "line_numbers": [8, 10],
+      "api_name": "calculateInterest",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "The exported function `calculateInterest` lacks documentation explaining parameter semantics, expected units (rate interpretation), return value, and edge cases.",
+      "fix_explanation": "Add JSDoc with descriptions for `balance` and `rate`, clarify that `rate` is a multiplier (e.g., 0.05 = 5%), and note that no input validation is performed."
+    },
+    {
+      "id": 3,
+      "file": "input.ts",
+      "line_numbers": [12, 22],
+      "api_name": "AccountService",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "The exported class `AccountService` has no class-level documentation describing responsibilities, storage semantics, or lifetime considerations.",
+      "fix_explanation": "Add class-level JSDoc describing that it manages accounts in-memory using a Map and note behavior such as lack of persistence."
+    },
+    {
+      "id": 4,
+      "file": "input.ts",
+      "line_numbers": [15, 17],
+      "api_name": "getAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method `getAccount` lacks documentation; should specify return behavior (returns `Account` or `null`) and lookup semantics.",
+      "fix_explanation": "Add JSDoc clarifying that it returns the `Account` if found or `null` otherwise and that it performs an in-memory lookup."
+    },
+    {
+      "id": 5,
+      "file": "input.ts",
+      "line_numbers": [19, 21],
+      "api_name": "saveAccount",
+      "issue_type": "Missing Docs",
+      "severity": "High",
+      "description": "Public method `saveAccount` lacks documentation; important to describe that it will insert or overwrite accounts by `id`.",
+      "fix_explanation": "Add JSDoc indicating the method saves an account into the internal store and that existing accounts with the same `id` will be overwritten."
+    }
+  ]
+}
